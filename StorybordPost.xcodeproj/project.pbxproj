@@ -29,6 +29,10 @@
 		7640AB142886D3C70031D034 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7640AB132886D3C70031D034 /* Alamofire */; };
 		7640AB172886D3E00031D034 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640AB162886D3E00031D034 /* Network.swift */; };
 		7640AB1A2886D48A0031D034 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7640AB192886D48A0031D034 /* JGProgressHUD */; };
+		7692DD6628A5FE2E00226C98 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 7692DD6528A5FE2E00226C98 /* Bond */; };
+		7692DD6A28A6000700226C98 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692DD6928A6000700226C98 /* HomeViewModel.swift */; };
+		7692DD6F28A635B500226C98 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692DD6E28A635B500226C98 /* CreateViewModel.swift */; };
+		7692DD7228A65B4000226C98 /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7692DD7128A65B4000226C98 /* EditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,9 @@
 		76270F1B2885C17A00F5623D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		76270F1C2885C17A00F5623D /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		7640AB162886D3E00031D034 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7692DD6928A6000700226C98 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7692DD6E28A635B500226C98 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		7692DD7128A65B4000226C98 /* EditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7640AB1A2886D48A0031D034 /* JGProgressHUD in Frameworks */,
+				7692DD6628A5FE2E00226C98 /* Bond in Frameworks */,
 				7640AB142886D3C70031D034 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,12 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				76270F152885BDB000F5623D /* BaseViewController.swift */,
-				76270F09288558FC00F5623D /* HomeViewController.swift */,
-				76270F0A288558FC00F5623D /* HomeViewController.xib */,
-				76270F0D2885BC8B00F5623D /* CreateViewController.swift */,
-				76270F0E2885BC8B00F5623D /* CreateViewController.xib */,
-				76270F112885BCB400F5623D /* EditViewController.swift */,
-				76270F122885BCB400F5623D /* EditViewController.xib */,
+				7692DD6728A5FFDF00226C98 /* home */,
+				7692DD6B28A6001E00226C98 /* create */,
+				7692DD6C28A6002F00226C98 /* edit */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -204,6 +209,60 @@
 			path = networking;
 			sourceTree = "<group>";
 		};
+		7692DD6728A5FFDF00226C98 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD6828A5FFF100226C98 /* viewmodel */,
+				76270F0A288558FC00F5623D /* HomeViewController.xib */,
+				76270F09288558FC00F5623D /* HomeViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		7692DD6828A5FFF100226C98 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD6928A6000700226C98 /* HomeViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		7692DD6B28A6001E00226C98 /* create */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD6D28A635A400226C98 /* viewModel */,
+				76270F0D2885BC8B00F5623D /* CreateViewController.swift */,
+				76270F0E2885BC8B00F5623D /* CreateViewController.xib */,
+			);
+			path = create;
+			sourceTree = "<group>";
+		};
+		7692DD6C28A6002F00226C98 /* edit */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD7028A65B3100226C98 /* viewmodel */,
+				76270F112885BCB400F5623D /* EditViewController.swift */,
+				76270F122885BCB400F5623D /* EditViewController.xib */,
+			);
+			path = edit;
+			sourceTree = "<group>";
+		};
+		7692DD6D28A635A400226C98 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD6E28A635B500226C98 /* CreateViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		7692DD7028A65B3100226C98 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				7692DD7128A65B4000226C98 /* EditViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,6 +282,7 @@
 			packageProductDependencies = (
 				7640AB132886D3C70031D034 /* Alamofire */,
 				7640AB192886D48A0031D034 /* JGProgressHUD */,
+				7692DD6528A5FE2E00226C98 /* Bond */,
 			);
 			productName = StorybordPost;
 			productReference = 76270ED1288558AE00F5623D /* StorybordPost.app */;
@@ -299,6 +359,7 @@
 			packageReferences = (
 				7640AB122886D3C70031D034 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7640AB182886D48A0031D034 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				7692DD6428A5FE2E00226C98 /* XCRemoteSwiftPackageReference "Bond" */,
 			);
 			productRefGroup = 76270ED2288558AE00F5623D /* Products */;
 			projectDirPath = "";
@@ -347,7 +408,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7692DD6F28A635B500226C98 /* CreateViewModel.swift in Sources */,
 				7640AB172886D3E00031D034 /* Network.swift in Sources */,
+				7692DD6A28A6000700226C98 /* HomeViewModel.swift in Sources */,
 				76270F0F2885BC8B00F5623D /* CreateViewController.swift in Sources */,
 				76270EDF288558AE00F5623D /* StorybordPost.xcdatamodeld in Sources */,
 				76270F132885BCB400F5623D /* EditViewController.swift in Sources */,
@@ -356,6 +419,7 @@
 				76270ED7288558AE00F5623D /* SceneDelegate.swift in Sources */,
 				76270F162885BDB000F5623D /* BaseViewController.swift in Sources */,
 				76270F0B288558FC00F5623D /* HomeViewController.swift in Sources */,
+				7692DD7228A65B4000226C98 /* EditViewModel.swift in Sources */,
 				76270F1D2885C17A00F5623D /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,6 +774,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		7692DD6428A5FE2E00226C98 /* XCRemoteSwiftPackageReference "Bond" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeclarativeHub/Bond.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -722,6 +794,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7640AB182886D48A0031D034 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		7692DD6528A5FE2E00226C98 /* Bond */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7692DD6428A5FE2E00226C98 /* XCRemoteSwiftPackageReference "Bond" */;
+			productName = Bond;
 		};
 /* End XCSwiftPackageProductDependency section */
 

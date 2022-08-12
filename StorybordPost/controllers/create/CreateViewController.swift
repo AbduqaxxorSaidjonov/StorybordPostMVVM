@@ -11,6 +11,7 @@ class CreateViewController: BaseViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextField: UITextField!
+    var viewModel = CreateViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class CreateViewController: BaseViewController {
     }
 
     func initViews(){
+        viewModel.controller = self
         initNavigation()
     }
     
@@ -35,21 +37,12 @@ class CreateViewController: BaseViewController {
     }
     
     @objc func rightTapped(){
-        apiPostCreate()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-    }
-    
-    func apiPostCreate(){
-        showProgress()
-        AFHttp.post(url: AFHttp.API_POST_CREATE, params: AFHttp.paramsPostCreate(post: Post(title: titleTextField.text!, body: bodyTextField.text!)), handler: {response in
-            self.hideProgress()
-            switch response.result{
-            case .success:
-                print(response.result)
+        viewModel.apiPostCreate(post: Post(title: titleTextField.text!, body: bodyTextField.text!), handler: { isCreated in
+            if isCreated{
                 self.navigationController?.popViewController(animated: true)
-            case let .failure(error):
-                print(error)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
             }
         })
     }
+
 }

@@ -13,6 +13,10 @@ struct Post: Decodable{
     var title: String? = ""
     var body: String? = ""
     
+    init(){
+        
+    }
+    
     init(title: String, body: String){
         self.title = title
         self.body = body
